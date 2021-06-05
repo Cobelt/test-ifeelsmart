@@ -21,7 +21,7 @@ module.exports = {
 
         historyApiFallback: true,
         disableHostCheck: true,
-        allowedHosts: ['muejs', 'localhost', '0.0.0.0'],
+        allowedHosts: ['localhost', '0.0.0.0'],
     },
     watchOptions: {
         aggregateTimeout: 300,
@@ -51,12 +51,12 @@ module.exports = {
             },
             {
                 test: /\.js|\.jsx$/,
-                exclude: /node_modules\/(?!muejs)/,
+                exclude: /node_modules\/(?!(.+-)?muejs)/,
                 use: 'babel-loader',
             },
             {
                 test: /\.(scss|sass)$/,
-                exclude: /node_modules\/(?!muejs)/,
+                exclude: /node_modules\/(?!(.+-)?muejs)/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ],
