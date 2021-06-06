@@ -2,6 +2,7 @@ import HtmlWebPackPlugin from 'html-webpack-plugin'
 import CopyWebPackPlugin from 'copy-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import Dotenv from 'dotenv-webpack'
 
 import webpack from 'webpack'
 import path from 'path'
@@ -70,5 +71,6 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({ filename: '[name].css' }),
+        new Dotenv(),
     ],
 }
