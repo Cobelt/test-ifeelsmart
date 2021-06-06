@@ -20,17 +20,17 @@ export default function App() {
             .catch(error => setCurrenciesError(error))
     }, [])
 
-    const { handleChange, watch, errors, ...rest } = useForm({
+    const { handleSubmit, watch, errors, ...rest } = useForm({
         mode: 'onChange',
         reValidateMode: 'onChange',
         criteriaMode: 'firstError',
     })
-    const onChange = values => console.log({ values })
+    const onSubmit = values => console.log({ values })
 
     const form = { errors, ...rest }
 
     return (
-        <form onChange={handleChange(onChange)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
             {currenciesError && (
                 <h3 className='text-center'>
                     Erreur lors de l'obtention des monnaies disponibles :
